@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { ExternalLink, Github, Shield, Coins, ImageIcon, Search } from "lucide-react"
 
+
 const projects = [
   {
     title: "DeFi Staking Platform",
@@ -102,7 +103,7 @@ export function ProjectsSection() {
           ))}
         </div>
 
-        {/* Security Audits Section */}
+        {/* Security Audits Section
         <div id="audits" className="mt-20">
           <div className="mb-10 text-center">
             <h3 className="mb-4 text-2xl font-bold sm:text-3xl">
@@ -141,7 +142,7 @@ export function ProjectsSection() {
               </Button>
             </div>
           </div>
-        </div>
+        </div>*/}
       </div>
     </section>
   )

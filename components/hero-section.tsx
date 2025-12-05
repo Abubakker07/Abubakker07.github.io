@@ -8,7 +8,7 @@ export function HeroSection() {
         {/* Badge */}
         <div className="mb-8 inline-flex items-center gap-2 rounded-full glass-card px-4 py-2">
           <Shield className="h-4 w-4 text-[#0ea5e9]" />
-          <span className="text-sm font-medium text-foreground">Web3 Security Researcher</span>
+          <span className="text-sm font-medium text-foreground">Web3 Security Beginner | Building Skills in Smart Contract Protection</span>
         </div>
 
         {/* Main Headline */}
@@ -19,42 +19,24 @@ export function HeroSection() {
         {/* Sub-headline */}
         <p className="mx-auto mb-10 max-w-2xl text-lg text-muted-foreground sm:text-xl leading-relaxed text-balance">
           Hi, I'm <span className="font-semibold text-foreground">Mohammed Abubakker Siddiqui</span>. A Web3 Security
-          Researcher & Full-Stack Developer based in Bangalore, dedicated to building and securing the next generation
+          Researcher based in Bangalore, dedicated to building and securing the next generation
           of decentralized applications.
         </p>
 
-        {/* CTA Buttons */}
-        <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Button
-            size="lg"
-            className="gradient-btn text-white border-0 px-8 py-6 text-base font-semibold hover:opacity-90 transition-opacity"
-          >
-            View Audits
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            className="px-8 py-6 text-base font-semibold border-2 hover:bg-secondary/50 transition-colors bg-transparent"
-          >
-            Contact Me
-          </Button>
-        </div>
-
-        {/* Stats */}
+      {/* Stats
         <div className="mt-16 grid grid-cols-2 gap-8 sm:grid-cols-4">
           {[
-            { value: "15+", label: "Audits Completed" },
-            { value: "50k+", label: "Lines Reviewed" },
-            { value: "3+", label: "Years Experience" },
-            { value: "5", label: "Hackathon Wins" },
+          { value: "0", label: "Audits Completed" },
+          { value: "50k+", label: "Lines Reviewed" },
+          { value: "1", label: "Year Experience" },
+          { value: "0", label: "Hackathon Wins" },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
               <div className="text-3xl font-bold gradient-text sm:text-4xl">{stat.value}</div>
               <div className="mt-1 text-sm text-muted-foreground">{stat.label}</div>
             </div>
           ))}
-        </div>
+        </div>*/}
       </div>
 
       {/* Scroll indicator */}

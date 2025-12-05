@@ -2,21 +2,18 @@ import { Code2, ShieldCheck, Award, Briefcase, Trophy, GraduationCap, FileCode, 
 
 const skills = [
   { name: "Solidity", icon: FileCode },
-  { name: "Rust", icon: Code2 },
+  { name: "JavaScript", icon: Code2 },
   { name: "Smart Contract Auditing", icon: ShieldCheck },
-  { name: "Python", icon: Code2 },
-  { name: "React / Next.js", icon: Code2 },
   { name: "Foundry / Hardhat", icon: Database },
 ]
 
 const certifications = [
-  "Certified Blockchain Security Professional",
-  "Ethereum Security Analyst",
-  "DeFi Security Specialist",
+  "Blockchain Basics",
+  "Solidity Smart Contract Developer",
 ]
 
 const experience = [
-  {
+  {/*{
     year: "2024",
     title: "ETHGlobal Bangkok Finalist",
     description: "Built a cross-chain security monitoring tool",
@@ -30,7 +27,7 @@ const experience = [
     year: "2022",
     title: "Web3 Developer Intern",
     description: "DeFi protocol development at a top firm",
-  },
+  },*/}
 ]
 
 export function AboutSection() {
@@ -61,10 +58,10 @@ export function AboutSection() {
                 decentralized protocols. My journey began with a deep fascination for blockchain technology, which
                 evolved into a commitment to making the decentralized ecosystem safer for everyone.
               </p>
-              <p className="mt-4 text-muted-foreground leading-relaxed">
+              {/*<p className="mt-4 text-muted-foreground leading-relaxed">
                 With experience auditing DeFi protocols, NFT marketplaces, and cross-chain bridges, I bring a
                 comprehensive approach to security that combines manual review with advanced tooling.
-              </p>
+              </p>*/}
             </div>
           </div>
 
@@ -103,7 +100,7 @@ export function AboutSection() {
             </ul>
           </div>
 
-          {/* Experience Timeline Card */}
+          {/* Experience Timeline Card
           <div className="glass-card rounded-3xl p-6 md:col-span-2 lg:col-span-2">
             <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#0ea5e9]/10">
               <Briefcase className="h-6 w-6 text-[#0ea5e9]" />
@@ -132,7 +129,7 @@ export function AboutSection() {
                 </div>
               ))}
             </div>
-          </div>
+          </div>*/}
         </div>
       </div>
     </section>

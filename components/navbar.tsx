@@ -9,7 +9,7 @@ const navLinks = [
   { href: "#home", label: "Home" },
   { href: "#about", label: "About" },
   { href: "#projects", label: "Projects" },
-  { href: "#audits", label: "Security Audit" },
+  //{ href: "#audits", label: "Security Audit" },
   { href: "#contact", label: "Contact" },
 ]
 
@@ -35,7 +35,7 @@ export function Navbar() {
           <div className="flex h-10 w-10 items-center justify-center rounded-xl gradient-btn">
             <Shield className="h-5 w-5 text-white" />
           </div>
-          <span className="text-lg font-bold text-foreground">MAS</span>
+          <span className="text-lg font-bold text-foreground">Welcome to my Portfolio!</span>
         </a>
 
         {/* Desktop Navigation */}
@@ -53,10 +53,10 @@ export function Navbar() {
 
         <div className="hidden items-center gap-3 md:flex">
           <ThemeToggle />
-          <Button className="gradient-btn text-white border-0 hover:opacity-90 transition-opacity">
+          {/*<Button className="gradient-btn text-white border-0 hover:opacity-90 transition-opacity">
             <Download className="mr-2 h-4 w-4" />
             Download Resume
-          </Button>
+          </Button>*/}
         </div>
 
         {/* Mobile Menu Button */}

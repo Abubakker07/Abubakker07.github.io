@@ -1,0 +1,12 @@
+node_modules
+
+# Production
+.next/
+out/
+build/
+
+# System
+.DS_Store
+*.log
+.env
+.env.local

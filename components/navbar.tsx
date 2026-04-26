@@ -2,14 +2,13 @@
 
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
-import { Menu, X, Download, Shield } from "lucide-react"
+import { Menu, X, Download, Shield, Layers, Terminal, TerminalSquareIcon, TerminalSquare, Hexagon } from "lucide-react"
 import { ThemeToggle } from "@/components/theme-toggle"
 
 const navLinks = [
   { href: "#home", label: "Home" },
   { href: "#about", label: "About" },
   { href: "#projects", label: "Projects" },
-  //{ href: "#audits", label: "Security Audit" },
   { href: "#contact", label: "Contact" },
 ]
 
@@ -33,7 +32,7 @@ export function Navbar() {
         {/* Logo */}
         <a href="#home" className="flex items-center gap-2">
           <div className="flex h-10 w-10 items-center justify-center rounded-xl gradient-btn">
-            <Shield className="h-5 w-5 text-white" />
+            <Terminal className="h-5 w-5 text-white" />
           </div>
           <span className="text-lg font-bold text-foreground">Welcome to my Portfolio!</span>
         </a>
@@ -86,10 +85,6 @@ export function Navbar() {
                 {link.label}
               </a>
             ))}
-            <Button className="gradient-btn text-white border-0 w-full mt-2">
-              <Download className="mr-2 h-4 w-4" />
-              Download Resume
-            </Button>
           </div>
         </div>
       )}

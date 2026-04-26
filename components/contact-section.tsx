@@ -7,13 +7,14 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
-import { Github, Linkedin, Twitter, MessageCircle, Send, Sparkles } from "lucide-react"
+import { Send, Sparkles, MessageCircleX } from "lucide-react"
+import { FaGithub, FaLinkedin, FaXTwitter, FaDiscord } from "react-icons/fa6"
 
 const socialLinks = [
-  { name: "GitHub", icon: Github, href: "https://github.com" },
-  { name: "LinkedIn", icon: Linkedin, href: "https://linkedin.com" },
-  { name: "X (Twitter)", icon: Twitter, href: "https://x.com" },
-  { name: "Discord", icon: MessageCircle, href: "https://discord.com" },
+  { name: "GitHub", icon: FaGithub, href: "https://github.com/Abubakker07" },
+  { name: "LinkedIn", icon: FaLinkedin, href: "https://www.linkedin.com/in/md-abubakker-siddiqui/" },
+  { name: "X (Twitter)", icon: FaXTwitter, href: "https://x.com/abubakker_7" },
+  { name: "Discord", icon: FaDiscord, href: "https://discord.com/users/1320366211418161253" },
 ]
 
 export function ContactSection() {
@@ -137,7 +138,7 @@ export function ContactSection() {
               <div className="space-y-4 pt-6 border-t border-border">
                 <div>
                   <span className="text-sm text-muted-foreground">Email</span>
-                  <p className="font-medium text-foreground">hello@masiddiqui.dev</p>
+                  <p className="font-medium text-foreground">mh.abubakker7@gmail.com</p>
                 </div>
                 <div>
                   <span className="text-sm text-muted-foreground">Location</span>

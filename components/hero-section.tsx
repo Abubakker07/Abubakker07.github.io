@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Shield } from "lucide-react"
+import { ArrowRight, MonitorSmartphone, Shield } from "lucide-react"
 
 export function HeroSection() {
   return (
@@ -7,20 +7,20 @@ export function HeroSection() {
       <div className="mx-auto max-w-5xl text-center">
         {/* Badge */}
         <div className="mb-8 inline-flex items-center gap-2 rounded-full glass-card px-4 py-2">
-          <Shield className="h-4 w-4 text-[#0ea5e9]" />
-          <span className="text-sm font-medium text-foreground">Web3 Security Beginner | Building Skills in Smart Contract Protection</span>
+          <MonitorSmartphone className="h-4 w-4 text-[#0ea5e9]" />
+          <span className="text-sm font-medium text-foreground">Full Stack Developer | Crafting Seamless Web & Mobile Experiences</span>
         </div>
 
         {/* Main Headline */}
         <h1 className="mb-6 text-4xl font-bold leading-tight tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-          <span className="gradient-text text-balance">Securing the Decentralized Future.</span>
+          <span className="gradient-text text-balance">Turning Ideas into Functional and Scalable Applications</span>
         </h1>
 
         {/* Sub-headline */}
         <p className="mx-auto mb-10 max-w-2xl text-lg text-muted-foreground sm:text-xl leading-relaxed text-balance">
-          Hi, I'm <span className="font-semibold text-foreground">Mohammed Abubakker Siddiqui</span>. A Web3 Security
-          Researcher based in Bangalore, dedicated to building and securing the next generation
-          of decentralized applications.
+          Hi, I'm <span className="font-semibold text-foreground">Mohammed Abubakker Siddiqui</span>. A Full Stack Developer and student based in Bangalore. 
+          I specialize in building robust web applications and intuitive mobile experiences, 
+          focusing on seamless user journeys from frontend to backend.
         </p>
 
       {/* Stats
@@ -42,7 +42,7 @@ export function HeroSection() {
       {/* Scroll indicator */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2">
         <div className="flex flex-col items-center gap-2">
-          <span className="text-xs text-muted-foreground">Scroll to explore</span>
+          <span className="text-xs text-muted-foreground">Scroll to explore more about me!</span>
           <div className="h-10 w-6 rounded-full border-2 border-muted-foreground/30 p-1">
             <div className="h-2 w-1.5 mx-auto rounded-full bg-muted-foreground/50 animate-bounce" />
           </div>

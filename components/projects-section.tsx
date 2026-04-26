@@ -1,57 +1,67 @@
-import { Button } from "@/components/ui/button"
-import { ExternalLink, Github, Shield, Coins, ImageIcon, Search } from "lucide-react"
+"use client" // Make sure this is at the very top if you are using Next.js App Router
 
+import { useState } from "react"
+import { Button } from "@/components/ui/button"
+import { 
+  ExternalLink, 
+  Github, 
+  Car, 
+  Gamepad2, 
+  CircleDollarSign, 
+  Play, 
+  X 
+} from "lucide-react"
 
 const projects = [
   {
-    title: "DeFi Staking Platform",
+    title: "Rock Paper Scissors Game",
     description:
-      "A secure staking protocol with multi-asset support, time-locked rewards, and comprehensive slashing protection mechanisms.",
-    tags: ["Solidity", "Ethereum", "Next.js", "Foundry"],
-    icon: Coins,
+      "A classic game of Rock, Paper, Scissors. This project was created in 2023 as part of my early web development learning journey.",
+    tags: ["HTML", "CSS", "JavaScript"],
+    icon: Gamepad2,
     color: "#0ea5e9",
-    github: "#",
-    demo: "#",
+    github: "https://github.com/Abubakker07/rock-paper-scissors-game",
+    demoLink: "https://abubakker07.github.io/rock-paper-scissors-game/", 
+    // Live web link, so no video needed
   },
   {
-    title: "Smart Contract Vulnerability Scanner",
+    title: "NammaRide - Ride Simulator",
     description:
-      "An automated security analysis tool that detects common vulnerabilities including reentrancy, integer overflow, and access control issues.",
-    tags: ["Python", "Slither", "Foundry", "React"],
-    icon: Search,
+      "NammaRide is a native Android ride-hailing simulator engineered to tackle real-world transit challenges across major transit hubs in Bangalore.",
+    tags: ["Kotlin", "Jetpack Compose", "PHP", "MySQL", "Firebase", "Railway"],
+    icon: Car,
     color: "#14b8a6",
-    github: "#",
-    demo: "#",
+    github: "https://github.com/Abubakker07/NammaRide-Android",
+    // Added video path instead of web link
+    videoSrc: "/videos/nammaride-demo.mp4", 
   },
   {
-    title: "NFT Marketplace",
+    title: "Crypto Mining Profitability Calculator",
     description:
-      "A gas-optimized marketplace with royalty enforcement, lazy minting, and auction functionality built on ERC-721A.",
-    tags: ["Solidity", "IPFS", "Next.js", "Hardhat"],
-    icon: ImageIcon,
+      "A Windows desktop application that calculates the potential profitability of cryptocurrency mining.",
+    tags: ["VB.NET", "MySQL", "Visual Studio", "CoinGecko"],
+    icon: CircleDollarSign,
     color: "#a78bfa",
-    github: "#",
-    demo: "#",
+    github: "https://github.com/Abubakker07/crypto-calculator-project",
+    // Added video path instead of web link
+    videoSrc: "/videos/crypto-calculator-demo.mp4", 
   },
-]
-
-const auditHighlights = [
-  { protocol: "CrossChain Bridge Protocol", findings: "3 Critical, 5 High", saved: "$2M+" },
-  { protocol: "Lending Protocol X", findings: "1 Critical, 8 Medium", saved: "$500K+" },
-  { protocol: "DEX Aggregator", findings: "2 High, 4 Medium", saved: "$300K+" },
 ]
 
 export function ProjectsSection() {
+  // State to handle the video modal
+  const [activeVideo, setActiveVideo] = useState<string | null>(null)
+
   return (
-    <section id="projects" className="py-24 px-4">
+    <section id="projects" className="py-24 px-4 relative">
       <div className="mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="mb-16 text-center">
           <h2 className="mb-4 text-3xl font-bold sm:text-4xl">
-            <span className="gradient-text">Projects & Portfolio</span>
+            <span className="gradient-text">Projects</span>
           </h2>
           <p className="mx-auto max-w-2xl text-muted-foreground">
-            Building secure, scalable decentralized applications
+            Building secure, scalable full-stack applications
           </p>
         </div>
 
@@ -87,63 +97,71 @@ export function ProjectsSection() {
               {/* Links */}
               <div className="flex gap-3">
                 <Button variant="outline" size="sm" className="flex-1 bg-transparent" asChild>
-                  <a href={project.github}>
+                  <a href={project.github} target="_blank" rel="noopener noreferrer">
                     <Github className="mr-2 h-4 w-4" />
                     GitHub
                   </a>
                 </Button>
-                <Button size="sm" className="flex-1 gradient-btn text-white border-0" asChild>
-                  <a href={project.demo}>
-                    <ExternalLink className="mr-2 h-4 w-4" />
-                    Demo
-                  </a>
-                </Button>
+                
+                {/* Conditionally render Video Trigger OR External Link */}
+                {project.videoSrc ? (
+                  <Button 
+                    size="sm" 
+                    className="flex-1 gradient-btn text-white border-0 cursor-pointer" 
+                    onClick={() => setActiveVideo(project.videoSrc as string)}
+                  >
+                    <Play className="mr-2 h-4 w-4" />
+                    Watch Demo
+                  </Button>
+                ) : (
+                  <Button size="sm" className="flex-1 gradient-btn text-white border-0" asChild>
+                    <a href={project.demoLink} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      Live Demo
+                    </a>
+                  </Button>
+                )}
               </div>
             </div>
           ))}
         </div>
-
-        {/* Security Audits Section
-        <div id="audits" className="mt-20">
-          <div className="mb-10 text-center">
-            <h3 className="mb-4 text-2xl font-bold sm:text-3xl">
-              <span className="gradient-text">Security Audit Highlights</span>
-            </h3>
-            <p className="mx-auto max-w-2xl text-muted-foreground">
-              Protecting protocols and their users through thorough security analysis
-            </p>
-          </div>
-
-          <div className="glass-card rounded-3xl p-6 sm:p-8">
-            <div className="grid gap-6 md:grid-cols-3">
-              {auditHighlights.map((audit, index) => (
-                <div
-                  key={index}
-                  className="relative rounded-2xl bg-secondary/50 p-6 transition-colors hover:bg-secondary"
-                >
-                  <div className="mb-3 flex items-center gap-2">
-                    <Shield className="h-5 w-5 text-[#0ea5e9]" />
-                    <span className="font-semibold text-foreground">{audit.protocol}</span>
-                  </div>
-                  <div className="space-y-1 text-sm">
-                    <p className="text-muted-foreground">
-                      <span className="font-medium text-foreground">Findings:</span> {audit.findings}
-                    </p>
-                    <p className="text-[#14b8a6] font-medium">Potential Value Saved: {audit.saved}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-8 flex justify-center">
-              <Button className="gradient-btn text-white border-0 px-8">
-                <Shield className="mr-2 h-4 w-4" />
-                View Full Audit Reports
-              </Button>
-            </div>
-          </div>
-        </div>*/}
       </div>
+
+      {/* Video Modal Overlay */}
+      {activeVideo && (
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 animate-in fade-in duration-200"
+          onClick={() => setActiveVideo(null)} // Close when clicking outside
+        >
+          <div 
+            className="relative w-full max-w-4xl bg-[#0a0a0a] rounded-2xl overflow-hidden shadow-2xl border border-secondary/50"
+            onClick={(e) => e.stopPropagation()} // Prevent closing when clicking the video box
+          >
+            {/* Modal Header */}
+            <div className="flex justify-between items-center p-4 border-b border-secondary/30">
+              <h3 className="font-semibold text-foreground">Project Demonstration</h3>
+              <button 
+                onClick={() => setActiveVideo(null)} 
+                className="text-muted-foreground hover:text-white transition-colors"
+              >
+                <X className="h-6 w-6" />
+              </button>
+            </div>
+            
+            {/* Video Player */}
+            <div className="aspect-video w-full bg-black">
+              <video 
+                src={activeVideo} 
+                controls 
+                autoPlay 
+                className="w-full h-full object-contain"
+              >
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   )
 }

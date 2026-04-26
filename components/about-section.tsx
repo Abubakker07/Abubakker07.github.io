@@ -1,33 +1,22 @@
-import { Code2, ShieldCheck, Award, Briefcase, Trophy, GraduationCap, FileCode, Database } from "lucide-react"
+import { Code2, ShieldCheck, Award, Briefcase, Trophy, GraduationCap, FileCode, Database, User2Icon, CircleUserRound, Smile, UserCheck, UserCheck2, Workflow, WebhookIcon, MonitorCheck, Monitor } from "lucide-react"
 
 const skills = [
-  { name: "Solidity", icon: FileCode },
-  { name: "JavaScript", icon: Code2 },
-  { name: "Smart Contract Auditing", icon: ShieldCheck },
-  { name: "Foundry / Hardhat", icon: Database },
+  { name: "Frontend - Python, React.js, Node.js, Next.js, Kotlin, Jetpack Compose, Tailwind CSS", icon: Code2 },
+  { name: "Backend & DB - Node.js, PHP, MySQL, Vector Databases (Weaviate)", icon: Database },
+  { name: "DevOps/Tools - Git, Docker, AI-Assisted Code Auditing, Firebase", icon: ShieldCheck },
 ]
 
 const certifications = [
-  "Blockchain Basics",
-  "Solidity Smart Contract Developer",
+  "AI & Intelligence - GenAI Engineering, Prompt Engineering Bootcamp, Automation Anywhere",
+  "Full Stack & Engineering - Digital Engineering (NASSCOM), Data Visualization (Python)",
 ]
 
 const experience = [
-  {/*{
-    year: "2024",
-    title: "ETHGlobal Bangkok Finalist",
-    description: "Built a cross-chain security monitoring tool",
-  },
   {
-    year: "2023",
-    title: "Lead Security Researcher",
-    description: "Independent smart contract auditing",
+    year: "2025",
+    title: "Full Stack Developer | Intern",
+    description: "Contributed as a Full Stack Developer at Gyaankool Research Labs, delivering robust web applications through clean code and analytical problem-solving. Played a vital role in enhancing project initiatives and streamlining development workflows.",
   },
-  {
-    year: "2022",
-    title: "Web3 Developer Intern",
-    description: "DeFi protocol development at a top firm",
-  },*/}
 ]
 
 export function AboutSection() {
@@ -40,38 +29,34 @@ export function AboutSection() {
             <span className="gradient-text">About & Skills</span>
           </h2>
           <p className="mx-auto max-w-2xl text-muted-foreground">
-            Combining deep technical expertise with a passion for blockchain security
+            Combining deep technical expertise with a passion for product development.
           </p>
         </div>
 
-        {/* Bento Grid */}
-        <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-4">
-          {/* About Card - Large */}
-          <div className="glass-card rounded-3xl p-8 md:col-span-2 lg:col-span-2 lg:row-span-2">
-            <div className="flex h-full flex-col">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#0ea5e9]/10">
-                <ShieldCheck className="h-6 w-6 text-[#0ea5e9]" />
-              </div>
-              <h3 className="mb-3 text-xl font-bold text-foreground">Who I Am</h3>
-              <p className="text-muted-foreground leading-relaxed flex-grow">
-                I'm a passionate Web3 Security Researcher with a keen eye for vulnerabilities in smart contracts and
-                decentralized protocols. My journey began with a deep fascination for blockchain technology, which
-                evolved into a commitment to making the decentralized ecosystem safer for everyone.
-              </p>
-              {/*<p className="mt-4 text-muted-foreground leading-relaxed">
-                With experience auditing DeFi protocols, NFT marketplaces, and cross-chain bridges, I bring a
-                comprehensive approach to security that combines manual review with advanced tooling.
-              </p>*/}
+        {/* Bento Grid - Simplified to a strict 2-column layout with equal row heights */}
+        <div className="grid gap-6 md:grid-cols-2 auto-rows-fr">
+          
+          {/* About Card */}
+          <div className="glass-card rounded-3xl p-6 flex flex-col h-full">
+            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#0ea5e9]/10 shrink-0">
+              <Smile className="h-6 w-6 text-[#0ea5e9]" />
             </div>
+            <h3 className="mb-3 text-xl font-bold text-foreground">Who Am I?</h3>
+            <p className="text-muted-foreground leading-relaxed flex-grow">
+              I am a Full Stack Developer and final-year student with a passion for building scalable, end-to-end applications. 
+              I bridge the gap between complex backend logic and intuitive user interfaces. 
+              My approach combines traditional software engineering principles with AI-driven development to build faster, 
+              smarter, and more efficient digital solutions.
+            </p>
           </div>
 
           {/* Skills Card */}
-          <div className="glass-card rounded-3xl p-6 md:col-span-1 lg:col-span-2">
-            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#14b8a6]/10">
+          <div className="glass-card rounded-3xl p-6 flex flex-col h-full">
+            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#14b8a6]/10 shrink-0">
               <Code2 className="h-6 w-6 text-[#14b8a6]" />
             </div>
             <h3 className="mb-4 text-lg font-bold text-foreground">Technical Skills</h3>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2 flex-grow">
               {skills.map((skill) => (
                 <span
                   key={skill.name}
@@ -84,37 +69,21 @@ export function AboutSection() {
             </div>
           </div>
 
-          {/* Certifications Card */}
-          <div className="glass-card rounded-3xl p-6 md:col-span-1 lg:col-span-2">
-            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#a78bfa]/10">
-              <Award className="h-6 w-6 text-[#a78bfa]" />
-            </div>
-            <h3 className="mb-4 text-lg font-bold text-foreground">Certifications</h3>
-            <ul className="space-y-2">
-              {certifications.map((cert) => (
-                <li key={cert} className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <div className="h-1.5 w-1.5 rounded-full bg-[#a78bfa]" />
-                  {cert}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Experience Timeline Card
-          <div className="glass-card rounded-3xl p-6 md:col-span-2 lg:col-span-2">
-            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#0ea5e9]/10">
+          {/* Experience Timeline Card */}
+          <div className="glass-card rounded-3xl p-6 flex flex-col h-full">
+            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#0ea5e9]/10 shrink-0">
               <Briefcase className="h-6 w-6 text-[#0ea5e9]" />
             </div>
             <h3 className="mb-4 text-lg font-bold text-foreground">Experience</h3>
-            <div className="space-y-4">
+            <div className="space-y-4 flex-grow">
               {experience.map((exp, index) => (
                 <div key={index} className="flex gap-4">
                   <div className="flex flex-col items-center">
                     <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-[#0ea5e9] to-[#14b8a6]">
                       {index === 0 ? (
-                        <Trophy className="h-4 w-4 text-white" />
+                        <Monitor className="h-4 w-4 text-white" />
                       ) : index === 1 ? (
-                        <ShieldCheck className="h-4 w-4 text-white" />
+                        <ShieldCheck className="h-4 w-4 text-white" />  
                       ) : (
                         <GraduationCap className="h-4 w-4 text-white" />
                       )}
@@ -129,7 +98,24 @@ export function AboutSection() {
                 </div>
               ))}
             </div>
-          </div>*/}
+          </div>
+
+          {/* Certifications Card */}
+          <div className="glass-card rounded-3xl p-6 flex flex-col h-full">
+            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#a78bfa]/10 shrink-0">
+              <Award className="h-6 w-6 text-[#a78bfa]" />
+            </div>
+            <h3 className="mb-4 text-lg font-bold text-foreground">Certifications</h3>
+            <ul className="space-y-2 flex-grow">
+              {certifications.map((cert) => (
+                <li key={cert} className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <div className="h-1.5 w-1.5 rounded-full bg-[#a78bfa] shrink-0" />
+                  <span>{cert}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          
         </div>
       </div>
     </section>

@@ -33,7 +33,7 @@ const projects = [
     color: "#14b8a6",
     github: "https://github.com/Abubakker07/NammaRide-Android",
     // Added video path instead of web link
-    videoSrc: "/videos/nammaride-demo.mp4", 
+    videoSrc: "/videos/app_project.mp4", 
   },
   {
     title: "Crypto Mining Profitability Calculator",
@@ -44,7 +44,7 @@ const projects = [
     color: "#a78bfa",
     github: "https://github.com/Abubakker07/crypto-calculator-project",
     // Added video path instead of web link
-    videoSrc: "/videos/crypto-calculator-demo.mp4", 
+    videoSrc: "/videos/video_project.mp4", 
   },
 ]
 
@@ -139,7 +139,7 @@ export function ProjectsSection() {
           >
             {/* Modal Header */}
             <div className="flex justify-between items-center p-4 border-b border-secondary/30">
-              <h3 className="font-semibold text-foreground">Project Demonstration</h3>
+              <h3 className="font-semibold text-foreground">Project Demonstration (Watch at 1.25x speed)</h3>
               <button 
                 onClick={() => setActiveVideo(null)} 
                 className="text-muted-foreground hover:text-white transition-colors"

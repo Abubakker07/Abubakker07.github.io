@@ -33,7 +33,7 @@ const projects = [
     color: "#14b8a6",
     github: "https://github.com/Abubakker07/NammaRide-Android",
     // Added video path instead of web link
-    videoSrc: "/videos/app_project.mp4", 
+    videoSrc: "/videos/app_demo.mp4", 
   },
   {
     title: "Crypto Mining Profitability Calculator",

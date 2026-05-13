@@ -1,4 +1,4 @@
-"use client" // Make sure this is at the very top if you are using Next.js App Router
+"use client"
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
@@ -21,8 +21,7 @@ const projects = [
     icon: Gamepad2,
     color: "#0ea5e9",
     github: "https://github.com/Abubakker07/rock-paper-scissors-game",
-    demoLink: "https://abubakker07.github.io/rock-paper-scissors-game/", 
-    // Live web link, so no video needed
+    demoLink: "https://abubakker07.github.io/rock-paper-scissors-game/",
   },
   {
     title: "NammaRide - Ride Simulator",
@@ -32,8 +31,7 @@ const projects = [
     icon: Car,
     color: "#14b8a6",
     github: "https://github.com/Abubakker07/NammaRide-Android",
-    // Added video path instead of web link
-    videoSrc: "/videos/app_demo.mp4", 
+    videoSrc: "https://youtube.com/embed/WHzs1Zq1u00?autoplay=1&mute=1&vq=hd1080",
   },
   {
     title: "Crypto Mining Profitability Calculator",
@@ -43,13 +41,11 @@ const projects = [
     icon: CircleDollarSign,
     color: "#a78bfa",
     github: "https://github.com/Abubakker07/crypto-calculator-project",
-    // Added video path instead of web link
-    videoSrc: "/videos/video_project.mp4", 
+    videoSrc: "https://www.youtube.com/embed/lmRXaG6YItI?autoplay=1&mute=1&vq=hd1080",
   },
 ]
 
 export function ProjectsSection() {
-  // State to handle the video modal
   const [activeVideo, setActiveVideo] = useState<string | null>(null)
 
   return (
@@ -102,12 +98,11 @@ export function ProjectsSection() {
                     GitHub
                   </a>
                 </Button>
-                
-                {/* Conditionally render Video Trigger OR External Link */}
+
                 {project.videoSrc ? (
-                  <Button 
-                    size="sm" 
-                    className="flex-1 gradient-btn text-white border-0 cursor-pointer" 
+                  <Button
+                    size="sm"
+                    className="flex-1 gradient-btn text-white border-0 cursor-pointer"
                     onClick={() => setActiveVideo(project.videoSrc as string)}
                   >
                     <Play className="mr-2 h-4 w-4" />
@@ -129,35 +124,33 @@ export function ProjectsSection() {
 
       {/* Video Modal Overlay */}
       {activeVideo && (
-        <div 
+        <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 animate-in fade-in duration-200"
-          onClick={() => setActiveVideo(null)} // Close when clicking outside
+          onClick={() => setActiveVideo(null)}
         >
-          <div 
+          <div
             className="relative w-full max-w-4xl bg-[#0a0a0a] rounded-2xl overflow-hidden shadow-2xl border border-secondary/50"
-            onClick={(e) => e.stopPropagation()} // Prevent closing when clicking the video box
+            onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
             <div className="flex justify-between items-center p-4 border-b border-secondary/30">
               <h3 className="font-semibold text-foreground">Project Demonstration (Watch at 1.25x speed)</h3>
-              <button 
-                onClick={() => setActiveVideo(null)} 
+              <button
+                onClick={() => setActiveVideo(null)}
                 className="text-muted-foreground hover:text-white transition-colors"
               >
                 <X className="h-6 w-6" />
               </button>
             </div>
-            
-            {/* Video Player */}
+
+            {/* YouTube iframe Player */}
             <div className="aspect-video w-full bg-black">
-              <video 
-                src={activeVideo} 
-                controls 
-                autoPlay 
-                className="w-full h-full object-contain"
-              >
-                Your browser does not support the video tag.
-              </video>
+              <iframe
+                src={activeVideo}
+                className="w-full h-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
             </div>
           </div>
         </div>

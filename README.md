@@ -35,5 +35,5 @@ A quick look at the top-level files and directories you'll see in this project.
 ├── components/           # Reusable UI components (Buttons, Cards)
 │   ├── ui/               # Shadcn UI primitives
 │   └── sections/         # Specific sections (Hero, Skills, Contact)
-├── public/               # Static assets (Images, Resume PDF)
+├── public/               # Static assets (Images, Videos)
 └── tailwind.config.ts    # Tailwind configuration
